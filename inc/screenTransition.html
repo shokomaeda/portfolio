@@ -1,0 +1,20 @@
+<div class="pageLoader js-screen-transition"></div>
+
+<script>
+	window.addEventListener("DOMContentLoaded", async () => {
+
+		const jsScreen = '.js-screen-transition';
+
+		gsap.set(
+			jsScreen, {
+				x: 0,
+			},
+		);
+
+		const tl = gsap.timeline();
+		tl.to(jsScreen, {
+				x: '-100%',
+				duration: .5,
+		})
+	});
+</script>

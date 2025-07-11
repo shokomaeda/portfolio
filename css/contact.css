@@ -1,0 +1,42 @@
+/* ======================================== */
+/* contact-form
+/* ======================================== */
+
+.contactForm {
+	background: var(--color-black);
+	padding: 10rem 8rem;
+	color: var(--color-white);
+	margin: 10rem 0;
+
+	dl {
+		display: flex;
+		flex-flow: column;
+
+		dt {
+			letter-spacing: .1em;
+			margin-bottom: 2rem;
+		}
+
+		dd {
+			margin-bottom: 4rem;
+		}
+	}
+
+	input,
+	textarea {
+		width: 100%;
+		font-size: 1.6rem;
+		padding: 1em;
+		background: var(--color-white);
+		color: var(--color-black);
+	}
+
+	textarea {
+		height: 20em;
+	}
+
+	.c-button {
+		margin-top: 4rem;
+	}
+}
+

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Shoko Maeda</title>
+	<meta name="description" content="前田翔子のポートフォリオサイトです。">
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="icon" href="/img/favicon.ico?ver=20240720" id="favicon">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png?ver=20240720">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="/css/common.css">
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+	<link rel="stylesheet" href="../css/about.css?ver=20240716">
+	<script src="../js/about.js?ver=20240716" defer></script>
+</head>
+
+<body>
+	<div class="pageLoader js-screen-transition"></div>
+
+<script>
+	window.addEventListener("DOMContentLoaded", async () => {
+
+		const jsScreen = '.js-screen-transition';
+
+		gsap.set(
+			jsScreen, {
+				x: 0,
+			},
+		);
+
+		const tl = gsap.timeline();
+		tl.to(jsScreen, {
+				x: '-100%',
+				duration: .5,
+		})
+	});
+</script>
+	<header class="header">
+		<div class="header__inner">
+			<a href="../" class="header-logo">
+				<p class="header__logo">SHOKO MAEDA</p>
+			</a>
+	
+			<button id="gnavBtn" class="gnavBtn">
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+	</header>
+
+	<main class="main">
+		<section class="profile section">
+			<div class="profile__image">
+				<h2 class="profile__heading c-heading">
+					<span>ABOUT</span>
+					<span>PROFILE</span>
+				</h2>
+				<img src="../img/about/about.jpg" alt="自画像">
+			</div>
+			<div class="profile__inner inner">
+				<h3 class="profile__name">前田 翔子</h3>
+				<p class="profile__text">
+					1996年11月18日生まれ。愛知県出身。大学を卒業後、5年間事務職に従事。<br>
+					2024年3月、職業訓練校へ入校し、Webデザインやコーディングについて学ぶ。<br>
+					好きなことはゲーム、漫画、アニメ、ディズニー。
+				</p>
+			</div>
+		</section>
+
+		<section class="biography section js-scroll-trigger">
+			<div class="biography__inner inner">
+				<h2 class="biography__heading c-heading">BIOGRAPHY</h2>
+
+				<div class="biography__container">
+					<ul class="biography__list">
+						<li class="biography__item">
+							<p class="biography__date">1996.11</p>
+							<p class="biography__title">パソコンが好きな幼少期</p>
+							<p class="biography__description">
+								愛知県に産まれる。幼少期化からパソコンやゲームが大好きで、暇さえあればパソコンに触れていました。
+							</p>
+						</li>
+
+						<li class="biography__item">
+							<p class="biography__date">2015.04</p>
+							<p class="biography__title">楽しい事に全力な大学時代</p>
+							<p class="biography__description">
+								大学では、好きだった日本文学や文化について学ぶ。勉強だけではなく、今しかできないことをやろうと思い、ゼミやアルバイトなど、様々なことを全力で楽しみました。
+							</p>
+						</li>
+
+						<li class="biography__item">
+							<p class="biography__date">2019.04</p>
+							<p class="biography__title">事務職として働く日々</p>
+							<p class="biography__description">
+								大学を卒業後、事務職として従事。自分なりに業務を工夫し、効率化することにやりがいを覚える。働きながら簿記3級の資格を取得しました。
+							</p>
+						</li>
+
+						<li class="biography__item">
+							<p class="biography__date">2024.03</p>
+							<p class="biography__title">Webデザインに興味を持つ</p>
+							<p class="biography__description">
+								退職後、自分のやりたいことを考えたときに、パソコンが好きで、自分で何かを作ることをしてみたいと思い、Webデザインに興味を持つ。訓練校に入校し本格的に勉強を始めました。
+							</p>
+						</li>
+
+						<li class="biography__item">
+							<p class="biography__date">現在~</p>
+							<p class="biography__title">フロントエンドエンジニアを目指し奮闘中</p>
+							<p class="biography__description">
+								訓練校で学んだWebデザイン・コーディングの知識を活かして、フロントエンドエンジニアを目指す。HTML・cssだけではなくJavascriptやReactにも興味があり、勉強中です。
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="strength section">
+			<div class="strength__inner inner">
+				<h2 class="strength__heading c-heading">STRENGTH</h2>
+
+        <!-- <div class="circle-container">
+            <svg viewBox="0 0 500 500" width="50rem" height="50rem" class="circle-wrapper-sp">
+              <circle cx="250" cy="250" r="200" fill="#fff" stroke="#212121" stroke-width="1" class="circle-animation"></circle>
+            </svg>
+            <div class="circle">COMMUNICATION</div>
+        </div> -->
+
+				<div class="strength__circleWrap">
+					<div class="strength__circleItem">
+						<svg viewBox="0 0 500 500" width="50rem" height="50rem">
+								<circle cx="250" cy="250" r="249" fill="rgba(0,0,0,0)" stroke="#212121" stroke-width="1"></circle>
+						</svg>
+						<p>COMMUNICATION</p>
+					</div>
+
+					<div class="strength__circleItem">
+						<svg viewBox="0 0 500 500" width="50rem" height="50rem">
+							<circle cx="250" cy="250" r="249" fill="rgba(0,0,0,0)" stroke="#212121" stroke-width="1"></circle>
+						</svg>
+						<p>CAUTIOUS</p>
+					</div>
+
+					<div class="strength__circleItem">
+						<svg viewBox="0 0 500 500" width="50rem" height="50rem">
+						<circle cx="250" cy="250" r="249" fill="rgba(0,0,0,0)" stroke="#212121" stroke-width="1"></circle>
+						</svg>
+						<p>AMBITION</p>
+					</div>
+				</div>
+				
+				<ul class="strength__list">
+					<li class="strength__item js-fadeIn">
+						<div class="strength__block">
+							<h3 class="strength__title c-heading-small">COMMUNICATION</h3>
+							<h4 class="strength__subtitle">コミュニケーション</h4>
+						</div>
+						<p class="strength__description">
+							相手を理解し、どう感じるかを考えて対話することで円滑なコミュニケーションを取ることができます。<br>
+							営業事務に従事していた際、社内・社外のコミュニケーションが必要でしたが、相手の求めるものを理解することで円滑に業務を進めることができました。<br>
+						</p>
+					</li>
+
+					<li class="strength__item js-fadeIn">
+						<div class="strength__block">
+							<h3 class="strength__title c-heading-small">CAUTIOUS</h3>
+							<h4 class="strength__subtitle">慎重</h4>
+						</div>
+						<p class="strength__description">
+							ルーティンワークであっても確認を怠らず、慎重に行動することができます。<br>
+							新しい業務に携わる際は必ずメモを取り、請求書や契約書の作成など間違いの許されない業務も、メモを確認しながら慎重に行うことで間違いのないようにしていました。どんな簡単なことでも慎重丁寧を心がけ、業務を行うようにしています。
+						</p>
+					</li>
+
+					<li class="strength__item js-fadeIn">
+						<div class="strength__block">
+							<h3 class="strength__title c-heading-small">AMBITION</h3>
+							<h4 class="strength__subtitle">向上心</h4>
+						</div>
+						<p class="strength__description">
+							常に向上心を持ち、より良くするにはどうしたらよいのかを考えて行動しています。<br>
+							過去の経験から学んだことや、新しいことを学ぶことに情熱を持って取り組み、成長し続けたいと考えています。これからもチャレンジ精神を忘れず、新しい課題に取り組んでいく覚悟です。<br>
+						</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+	
+
+	
+	<footer class="footer">
+		<p class="copyright">&copy;Shoko Maeda 2024</p>
+	</footer>
+	
+
+
+	<nav class="gnav">
+		<ul class="gnav__list">
+			<li class="gnav__item"><a href="../">HOME</a></li>
+			<li class="gnav__item"><a href="../about">ABOUT</a></li>
+			<li class="gnav__item"><a href="../works">WORKS</a></li>
+			<!-- <li class="gnav__item"><a href="../contact/">CONTACT</a></li> -->
+		</ul>
+	</nav>
+	
+	<script>
+		const body = document.querySelector("body");
+		const gnav = document.querySelector(".gnav");
+		const gnavItem = document.querySelector(".gnav__item");
+		const gnavBtn = document.querySelector(".gnavBtn");
+	
+		// ========================================
+		// gnav 開閉時のアニメーション
+		// ========================================
+		window.addEventListener("DOMContentLoaded", async () => {
+			gsap.set(".gnav__item", {
+				xPercent: 100,
+				opacity: 0
+			})
+		})
+	
+	
+		gnavBtn.addEventListener('click', function() {
+			const result = gnav.classList.contains('is-open');
+	
+			if (result) {
+				// 閉じる
+				body.classList.remove('is-fixed');
+				gnavBtn.classList.remove('is-active');
+				gnav.classList.remove('is-open');
+	
+				const tl = gsap.timeline();
+	
+				tl.to(gnav, {
+					autoAlpha: 0,
+					duration: .5,
+					ease: "power2.inOut"
+				})
+				.to(".gnav__item", {
+					opacity: 0,
+					xPercent: 100,
+					duration: .5,
+					ease: "power4.out",
+				})
+	
+			} else {
+				// 開く
+				body.classList.add('is-fixed');
+				gnavBtn.classList.add('is-active');
+				gnav.classList.add('is-open');
+	
+				const tl = gsap.timeline();
+	
+				tl.to(gnav, {
+					autoAlpha: 1,
+					duration: 0.5,
+					ease: "power2.inOut"
+				})
+				.to(".gnav__item", {
+					opacity: 1,
+					xPercent: 0,
+					duration: 1,
+					ease: "power4.out",
+					stagger: {
+						each: .1,
+					},
+				})
+			}
+		});
+	
+	
+		// ========================================
+		// gnav テキストホバーアニメーション
+		// ========================================
+	
+		/* spanタグに分割 */
+		let splitTarget = document.querySelectorAll('.gnav__list li a'); //ターゲットとなる要素を全取得
+		splitTarget.forEach((target) => { // target = ターゲット
+			if (!target.classList.contains('is-active')) { //ターゲットが'is-active'クラスを持っていない場合
+				newText = ''; //生成する要素を格納するための変数
+				spanText = target.innerHTML; //ターゲットの中身を取得
+				spanText.split('').forEach((char) => { // char = character 文字
+					newText += '<span>' + char + '</span>'; //一文字ずつspanタグで囲む
+				});
+				newTextBefore = "<div class='before'>" + newText + "</div>"; //beforeクラスをつけた要素を生成
+				newTextAfter = "<div class='after'>" + newText + "</div>"; //afterクラスをつけた要素を生成
+				newText = "<span class='text-wrap'>" + newTextBefore + newTextAfter + "</span>"; //before after両要素を囲む要素生成
+				target.innerHTML = newText; //ターゲットに生成した要素を挿入
+			}
+		});
+	
+		/* ターゲットにホバーした時の動き */
+		splitTarget.forEach((target) => {
+			if (!target.classList.contains('is-active')) { //ターゲットが'is-active'クラスを持っていない場合
+				let beforeSpan = target.querySelector('.before').querySelectorAll('span'); //beforeの中にあるspanタグを全取得
+				let afterSpan = target.querySelector('.after').querySelectorAll('span'); //afterの中にあるspanタグを全取得
+				target.addEventListener('mouseenter', () => { //ホバーしたとき
+					gsap.to(beforeSpan, {
+						y: '-100%',
+						stagger: .03,
+						ease: "power2.out"
+					}) //0.03秒おきに各spanタグをy軸上に移動
+					gsap.to(afterSpan, {
+						y: '0%',
+						stagger: .03,
+						ease: "power2.out"
+					})
+				})
+				target.addEventListener('mouseleave', () => { //ホバーが外れたとき
+					gsap.to(beforeSpan, {
+						y: '0%',
+						stagger: .03,
+						ease: "power2.out"
+					})
+					gsap.to(afterSpan, {
+						y: '100%',
+						stagger: .03,
+						ease: "power2.out"
+					})
+				})
+			}
+		});
+	</script>	
+
+	<script>
+		// use a script tag or an external JS file
+		document.addEventListener("DOMContentLoaded", (event) => {
+			gsap.registerPlugin(ScrollTrigger)
+			gsap.fromTo(
+				'.works__item',
+				{
+					autoAlpha:0,
+					y:10,
+				},
+				{
+					autoAlpha:1,
+					duration:.5,
+					y:0,
+					ease: "power4.in",
+					stagger:{
+						each:.1,
+						from:'start'
+					},
+				}
+			)
+		});
+	</script>
+</body>
+
+</html>

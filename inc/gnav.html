@@ -1,0 +1,127 @@
+<nav class="gnav">
+	<ul class="gnav__list">
+		<li class="gnav__item"><a href="<?php echo $path; ?>">HOME</a></li>
+		<li class="gnav__item"><a href="<?php echo $path; ?>about">ABOUT</a></li>
+		<li class="gnav__item"><a href="<?php echo $path; ?>works">WORKS</a></li>
+		<!-- <li class="gnav__item"><a href="<?php echo $path; ?>contact/">CONTACT</a></li> -->
+	</ul>
+</nav>
+
+<script>
+	const body = document.querySelector("body");
+	const gnav = document.querySelector(".gnav");
+	const gnavItem = document.querySelector(".gnav__item");
+	const gnavBtn = document.querySelector(".gnavBtn");
+
+	// ========================================
+	// gnav 開閉時のアニメーション
+	// ========================================
+	window.addEventListener("DOMContentLoaded", async () => {
+		gsap.set(".gnav__item", {
+			xPercent: 100,
+			opacity: 0
+		})
+	})
+
+
+	gnavBtn.addEventListener('click', function() {
+		const result = gnav.classList.contains('is-open');
+
+		if (result) {
+			// 閉じる
+			body.classList.remove('is-fixed');
+			gnavBtn.classList.remove('is-active');
+			gnav.classList.remove('is-open');
+
+			const tl = gsap.timeline();
+
+			tl.to(gnav, {
+				autoAlpha: 0,
+				duration: .5,
+				ease: "power2.inOut"
+			})
+			.to(".gnav__item", {
+				opacity: 0,
+				xPercent: 100,
+				duration: .5,
+				ease: "power4.out",
+			})
+
+		} else {
+			// 開く
+			body.classList.add('is-fixed');
+			gnavBtn.classList.add('is-active');
+			gnav.classList.add('is-open');
+
+			const tl = gsap.timeline();
+
+			tl.to(gnav, {
+				autoAlpha: 1,
+				duration: 0.5,
+				ease: "power2.inOut"
+			})
+			.to(".gnav__item", {
+				opacity: 1,
+				xPercent: 0,
+				duration: 1,
+				ease: "power4.out",
+				stagger: {
+					each: .1,
+				},
+			})
+		}
+	});
+
+
+	// ========================================
+	// gnav テキストホバーアニメーション
+	// ========================================
+
+	/* spanタグに分割 */
+	let splitTarget = document.querySelectorAll('.gnav__list li a'); //ターゲットとなる要素を全取得
+	splitTarget.forEach((target) => { // target = ターゲット
+		if (!target.classList.contains('is-active')) { //ターゲットが'is-active'クラスを持っていない場合
+			newText = ''; //生成する要素を格納するための変数
+			spanText = target.innerHTML; //ターゲットの中身を取得
+			spanText.split('').forEach((char) => { // char = character 文字
+				newText += '<span>' + char + '</span>'; //一文字ずつspanタグで囲む
+			});
+			newTextBefore = "<div class='before'>" + newText + "</div>"; //beforeクラスをつけた要素を生成
+			newTextAfter = "<div class='after'>" + newText + "</div>"; //afterクラスをつけた要素を生成
+			newText = "<span class='text-wrap'>" + newTextBefore + newTextAfter + "</span>"; //before after両要素を囲む要素生成
+			target.innerHTML = newText; //ターゲットに生成した要素を挿入
+		}
+	});
+
+	/* ターゲットにホバーした時の動き */
+	splitTarget.forEach((target) => {
+		if (!target.classList.contains('is-active')) { //ターゲットが'is-active'クラスを持っていない場合
+			let beforeSpan = target.querySelector('.before').querySelectorAll('span'); //beforeの中にあるspanタグを全取得
+			let afterSpan = target.querySelector('.after').querySelectorAll('span'); //afterの中にあるspanタグを全取得
+			target.addEventListener('mouseenter', () => { //ホバーしたとき
+				gsap.to(beforeSpan, {
+					y: '-100%',
+					stagger: .03,
+					ease: "power2.out"
+				}) //0.03秒おきに各spanタグをy軸上に移動
+				gsap.to(afterSpan, {
+					y: '0%',
+					stagger: .03,
+					ease: "power2.out"
+				})
+			})
+			target.addEventListener('mouseleave', () => { //ホバーが外れたとき
+				gsap.to(beforeSpan, {
+					y: '0%',
+					stagger: .03,
+					ease: "power2.out"
+				})
+				gsap.to(afterSpan, {
+					y: '100%',
+					stagger: .03,
+					ease: "power2.out"
+				})
+			})
+		}
+	});
+</script>
